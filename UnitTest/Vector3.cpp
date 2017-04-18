@@ -67,9 +67,9 @@ Vector3 operator/(const float lhs, const Vector3& rhs)
 Vector3 Vector3::operator-(const Vector3& rhs)
 {
 	Vector3 result;
-	result.x = -x;
-	result.y = -y;
-	result.z = -z;
+	result.x = x - rhs.x;
+	result.y = y - rhs.y;
+	result.z = z - rhs.z;
 	return result;
 }
 
@@ -101,7 +101,7 @@ float Vector3::dot(const Vector3 rhs)
 	return result;
 }
 
-float Vector3::normalize()
+float Vector3::normalise()
 {
 	float mag = magnitude();
 	x = x / mag;

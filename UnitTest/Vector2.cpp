@@ -25,6 +25,14 @@ Vector2 Vector2::operator+(const Vector2& rhs)
 	return result;
 }
 
+Vector2 Vector2::operator-(const Vector2& rhs)
+{
+	Vector2 result;
+	result.x = x - rhs.x;
+	result.y = y - rhs.y;
+	return result;
+}
+
 Vector2 Vector2::operator+=(const Vector2& rhs)
 {
 	Vector2 result;
@@ -49,11 +57,11 @@ Vector2 operator*(const float lhs, const Vector2& rhs)
 	return result;
 }
 
-Vector2 Vector2::operator-(const Vector2& rhs)
+Vector2 operator/(const float lhs, const Vector2 & rhs)
 {
 	Vector2 result;
-	result.x = -x;
-	result.y = -y;
+	result.x = lhs / rhs.x;
+	result.y = lhs / rhs.y;
 	return result;
 }
 
@@ -79,20 +87,12 @@ float Vector2::dot(const Vector2& rhs)
 	return result;
 }
 
-float Vector2::normalize()
+float Vector2::normalise()
 {
 	float mag = magnitude();
 	x = x / mag;
 	y = y / mag;
 	return mag;
-}
-
-Vector2 operator/(const float & lhs, const Vector2& rhs)
-{
-	Vector2 result;
-	result.x = lhs / rhs.x;
-	result.y = lhs / rhs.y;
-	return result;
 }
 
 Vector2::operator float*()

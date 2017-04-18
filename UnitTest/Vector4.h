@@ -19,7 +19,7 @@ public:
 	Vector4 Vector4::cross(const Vector4& rhs);
 
 	float dot(const Vector4 rhs);
-	float normalize();
+	float normalise();
 	float magnitude();
 
 	operator float*();

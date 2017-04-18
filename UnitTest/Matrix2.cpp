@@ -23,12 +23,12 @@ Matrix2::~Matrix2()
 {
 }
 
-Matrix2 Matrix2::setRotate(const float a)
+void Matrix2::setRotate(const float a)
 {
-	m[0] = cos(a);
-	m[1] = sin(a);
-	m[2] = -sin(a);
-	m[3] = cos(a);
+	m[0] = cosf(a);
+	m[1] = sinf(a);
+	m[2] = -sinf(a);
+	m[3] = cosf(a);
 }
 
 Matrix2::operator float*()
@@ -36,7 +36,7 @@ Matrix2::operator float*()
 	return &m[0];
 }
 
-Matrix2 Matrix2::operator*(const Matrix2& rhs)
+Matrix2 Matrix2::operator*(const Matrix2& rhs) // M * M
 {
 	Matrix2 result;
 	result.m[0] = m[0] * rhs.m[0] + m[2] * rhs.m[1];
@@ -49,8 +49,8 @@ Matrix2 Matrix2::operator*(const Matrix2& rhs)
 Vector2 Matrix2::operator*(const Vector2& rhs)
 {
 	Vector2 result;
-	result.x = m[0] * rhs.x + m[1] * rhs.y;
-	result.y = m[2] * rhs.x + m[3] * rhs.y;
+	result.x = m[0] * rhs.x + m[2] * rhs.y; // M * V
+	result.y = m[1] * rhs.x + m[3] * rhs.y;
 	return result;
 }
 

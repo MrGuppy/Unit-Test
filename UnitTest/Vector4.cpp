@@ -74,11 +74,12 @@ Vector4 operator/(const float lhs, const Vector4 & rhs)
 Vector4 Vector4::operator-(const Vector4& rhs)
 {
 	Vector4 result;
-	result.x = -x;
-	result.y = -y;
-	result.z = -z;
-	result.w = -w;
+	result.x = x - rhs.x;
+	result.y = y - rhs.y;
+	result.z = z - rhs.z;
+	result.w = w - rhs.w;
 	return result;
+
 }
 
 Vector4 Vector4::operator/(const Vector4& rhs)
@@ -110,7 +111,7 @@ float Vector4::dot(const Vector4 rhs)
 	return result;
 }
 
-float Vector4::normalize()
+float Vector4::normalise()
 {
 	float mag = magnitude();
 	x = x / mag;

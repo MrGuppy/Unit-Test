@@ -16,10 +16,10 @@ public:
 
 	Vector4& operator[](const int rhs);
 
-	Matrix4 setRotateX(const float a);
-	Matrix4 setRotateY(const float a);
-	Matrix4 setRotateZ(const float a);
-	Matrix4 setRotateW();
+	void setRotateX(const float a);
+	void setRotateY(const float a);
+	void setRotateZ(const float a);
+	void setRotateW();
 
 	operator float*();
 

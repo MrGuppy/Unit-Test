@@ -17,7 +17,7 @@ public:
 	Vector3 operator+=(const Vector3& rhs);
 	Vector3 cross(const Vector3& rhs);
 	float dot(const Vector3 rhs);
-	float normalize();
+	float normalise();
 	float magnitude();
 
 	operator float*();

@@ -12,7 +12,7 @@ public:
 
 	Vector2& operator[](const int rhs); // subscript operator returning with reference
 
-	Matrix2 setRotate(const float a); // set rotate
+	void setRotate(const float a); // set rotate
 
 	operator float*();
 

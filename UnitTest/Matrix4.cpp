@@ -44,7 +44,7 @@ Matrix4::Matrix4()
 	m[15] = 1;
 }
 
-Matrix4 Matrix4::setRotateX(const float a)
+void Matrix4::setRotateX(const float a)
 {
 	m[0] = 1; //col 1
 	m[1] = 0;
@@ -52,14 +52,15 @@ Matrix4 Matrix4::setRotateX(const float a)
 	m[3] = 0;
 
 	m[4] = 0; //col 2
-	m[5] = 1;
-	m[6] = cos(a);
-	m[7] = sin(a);
+	m[5] = cosf(a);
+	m[6] = sinf(a);
+	m[7] = 0;
+
 
 	m[8] = 0; //col 3
-	m[9] = 0;
-	m[10] = -sin(a);
-	m[11] = cos(a);
+	m[9] = -sinf(a);
+	m[10] = cosf(a);
+	m[11] = 0;
 
 	m[12] = 0; //col 4
 	m[13] = 0;
@@ -67,15 +68,38 @@ Matrix4 Matrix4::setRotateX(const float a)
 	m[15] = 1;
 }
 
-Matrix4 Matrix4::setRotateZ(const float a)
+void Matrix4::setRotateY(const float a)
 {
-	m[0] = cos(a); //col 1
-	m[1] = sin(a);
+	m[0] = cosf(a); //col 1
+	m[1] = 0;
+	m[2] = -sinf(a);
+	m[3] = 0;
+
+	m[4] = 0; //col 2
+	m[5] = 1;
+	m[6] = 0;
+	m[7] = 0;
+
+	m[8] = sinf(a); //col 3
+	m[9] = 0;
+	m[10] = cosf(a);
+	m[11] = 0;
+
+	m[12] = 0; //col 4
+	m[13] = 0;
+	m[14] = 0;
+	m[15] = 1;
+}
+
+void Matrix4::setRotateZ(const float a)
+{
+	m[0] = cosf(a); //col 1
+	m[1] = sinf(a);
 	m[2] = 0;
 	m[3] = 0;
 
-	m[4] = -sin(a); //col 2
-	m[5] = cos(a);
+	m[4] = -sinf(a); //col 2
+	m[5] = cosf(a);
 	m[6] = 0;
 	m[7] = 0;
 
@@ -90,30 +114,7 @@ Matrix4 Matrix4::setRotateZ(const float a)
 	m[15] = 1;
 }
 
-Matrix4 Matrix4::setRotateY(const float a)
-{
-	m[0] = cos(a); //col 1
-	m[1] = 0;
-	m[2] = sin(a);
-	m[3] = 0;
-
-	m[4] = 0; //col 2
-	m[5] = 1;
-	m[6] = 0;
-	m[7] = 0;
-
-	m[8] = -sin(a); //col 3
-	m[9] = 0;
-	m[10] = cos(a);
-	m[11] = 0;
-
-	m[12] = 0; //col 4
-	m[13] = 0;
-	m[14] = 0;
-	m[15] = 1;
-}
-
-Matrix4 Matrix4::setRotateW()
+void Matrix4::setRotateW()
 {
 	m[15] = 1;
 }
@@ -156,10 +157,10 @@ Matrix4 Matrix4::operator*(const Matrix4 & rhs)
 Vector4 Matrix4::operator*(const Vector4& rhs)
 {
 	Vector4 result;
-	result.x = m[0] * rhs.x + m[1] * rhs.y + m[2] * rhs.z + m[3] * rhs.w;
-	result.y = m[4] * rhs.x + m[5] * rhs.y + m[6] * rhs.z + m[7] * rhs.w;
-	result.z = m[8] * rhs.x + m[9] * rhs.y + m[10] * rhs.z + m[11] + rhs.w;
-	result.w = 0;
+	result.x = m[0] * rhs.x + m[4] * rhs.y + m[8] * rhs.z + m[12] * rhs.w;
+	result.y = m[1] * rhs.x + m[5] * rhs.y + m[9] * rhs.z + m[13] * rhs.w;
+	result.z = m[2] * rhs.x + m[6] * rhs.y + m[10] * rhs.z + m[14] * rhs.w;
+	result.w = m[3] * rhs.x + m[7] * rhs.y + m[11] * rhs.z + m[15] * rhs.w;
 	return result;
 }
 
