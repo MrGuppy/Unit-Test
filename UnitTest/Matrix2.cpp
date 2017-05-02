@@ -59,3 +59,11 @@ Vector2& Matrix2::operator[](const int rhs)
 	return *(Vector2*)(m + 2 * rhs);
 }
 
+void Matrix2::setScale(float x, float y)
+{
+	m[0] = x;
+	m[1] = 0;
+	m[2] = 0;
+	m[3] = y;
+}
+

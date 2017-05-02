@@ -140,3 +140,94 @@ Vector4 Vector4::cross(const Vector4& rhs)
 	result.w = 0;
 	return result;
 }
+
+float& Vector4::operator[](const int rhs)
+{
+	if (rhs == 0)
+		return x;
+	if (rhs == 1)
+		return y;
+	if (rhs == 2)
+		return z;
+	if (rhs == 3)
+		return w;
+	else
+		return x;
+}
+
+Vector4 Vector4::normalised(Vector4& data)
+{
+	Vector4 result;
+	float mag = data.magnitude();
+	if (!mag == 0)
+	{
+		result.x = x / mag;
+		result.y = y / mag;
+		result.z = z / mag;
+		result.w = w / mag;
+		return result;
+	}
+	return result;
+}
+
+Vector4 Vector4::min(const Vector4& rhs)
+{
+	Vector4 result;
+	if (x < rhs.x)
+		result.x = x;
+	else
+		result.x = x;
+
+	if (y < rhs.y)
+		result.y = y;
+	else
+		result.y = y;
+
+	if (z < result.z)
+		result.z = z;
+	else
+		result.z = z;
+
+	if (w < result.w)
+		result.w = w;
+	else
+		result.w = w;
+
+	return result;
+}
+
+Vector4 Vector4::max(const Vector4& rhs)
+{
+	Vector4 result;
+	if (x > rhs.x)
+		result.x = x;
+	else
+		result.x = x;
+
+	if (y > rhs.y)
+		result.y = y;
+	else
+		result.y = y;
+
+	if (z > result.z)
+		result.z = z;
+	else
+		result.z = z;
+
+	if (w > result.w)
+		result.w = w;
+	else
+		result.w = w;
+
+	return result;
+}
+
+Vector4 Vector4::clamp(Vector4 min, Vector4 max)
+{
+	Vector4 result;
+
+	result = this->min(min);
+	result = result.max(max);
+
+	return result;
+}

@@ -168,3 +168,26 @@ Vector4& Matrix4::operator[](const int rhs)
 {
 	return *(Vector4*) (m + 4 * rhs);
 }
+
+void Matrix4::setScale(float x, float y, float z, float w)
+{
+	m[0] = x; //col 1
+	m[1] = 0;
+	m[2] = 0;
+	m[3] = 0;
+
+	m[4] = 0; //col 2
+	m[5] = y;
+	m[6] = 0;
+	m[7] = 0;
+
+	m[8] = 0; //col 3
+	m[9] = 0;
+	m[10] = z;
+	m[11] = 0;
+
+	m[12] = 0; //col 4
+	m[13] = 0;
+	m[14] = 0;
+	m[15] = 1;
+}

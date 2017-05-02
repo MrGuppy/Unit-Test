@@ -115,3 +115,33 @@ Vector3& Matrix3::operator[](const int rhs)
 {
 	return *(Vector3*)(m + 3 * rhs);
 }
+
+void Matrix3::setPos(const Vector2& pos)
+{
+	m[0] = 1;
+	m[1] = 0;
+	m[2] = 0;
+
+	m[3] = 0;
+	m[4] = 1;
+	m[5] = 0;
+
+	m[6] = pos.x;
+	m[7] = pos.y;
+	m[8] = 1;
+}
+
+void Matrix3::setScale(float x, float y, float z)
+{
+	m[0] = x;
+	m[1] = 0;
+	m[2] = 0;
+
+	m[3] = 0;
+	m[4] = y;
+	m[5] = 0;
+
+	m[6] = 0;
+	m[7] = 0;
+	m[8] = z;
+}

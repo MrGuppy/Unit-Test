@@ -1,57 +1,9 @@
 ﻿  Vector4.cpp
   Vector3.cpp
   Vector2.cpp
-  unittest.cpp
-c:\users\s171736\desktop\unittest\unittest\unittest.cpp(219): error C2039: 'normalise': is not a member of 'Vector2'
-  c:\users\s171736\desktop\unittest\unittest\vector2.h(3): note: see declaration of 'Vector2'
-c:\users\s171736\desktop\unittest\unittest\unittest.cpp(221): error C2039: 'normalise': is not a member of 'Vector3'
-  c:\users\s171736\desktop\unittest\unittest\vector3.h(3): note: see declaration of 'Vector3'
-c:\users\s171736\desktop\unittest\unittest\unittest.cpp(223): error C2039: 'normalise': is not a member of 'Vector4'
-  c:\users\s171736\desktop\unittest\unittest\vector4.h(3): note: see declaration of 'Vector4'
-c:\users\s171736\desktop\unittest\unittest\unittest.cpp(238): error C2039: 'setRotateZ': is not a member of 'Matrix3'
-  c:\users\s171736\desktop\unittest\unittest\matrix3.h(5): note: see declaration of 'Matrix3'
-c:\users\s171736\desktop\unittest\unittest\unittest.cpp(281): error C2039: 'setRotateZ': is not a member of 'Matrix3'
-  c:\users\s171736\desktop\unittest\unittest\matrix3.h(5): note: see declaration of 'Matrix3'
-c:\users\s171736\desktop\unittest\unittest\unittest.cpp(308): error C2039: 'setRotateZ': is not a member of 'Matrix3'
-  c:\users\s171736\desktop\unittest\unittest\matrix3.h(5): note: see declaration of 'Matrix3'
   Matrix4.cpp
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(57): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(61): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(62): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(72): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(78): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(95): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(97): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(105): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Matrix3.cpp
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(61): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(63): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(68): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(69): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(72): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Matrix2.cpp
-c:\users\s171736\desktop\unittest\unittest\matrix2.cpp(28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix2.cpp(29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix2.cpp(30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\s171736\desktop\unittest\unittest\matrix2.cpp(31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  main.cpp
   Generating Code...
-c:\users\s171736\desktop\unittest\unittest\matrix2.cpp(32): error C4716: 'Matrix2::setRotate': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(49): error C4716: 'Matrix3::setRotateX': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(64): error C4716: 'Matrix3::setRotateY': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix3.cpp(79): error C4716: 'Matrix3::setRoataeZ': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(68): error C4716: 'Matrix4::setRotateX': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(91): error C4716: 'Matrix4::setRotateZ': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(119): error C4716: 'Matrix4::setRotateW': must return a value
-c:\users\s171736\desktop\unittest\unittest\matrix4.cpp(114): error C4716: 'Matrix4::setRotateY': must return a value
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\s171736\Documents\GitHub\Unit-Test\Debug\UnitTest.exe : fatal error LNK1120: 1 unresolved externals

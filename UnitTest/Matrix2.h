@@ -9,11 +9,10 @@ public:
 
 	Matrix2 operator*(const Matrix2& rhs); //M * M
 	Vector2 operator*(const Vector2& rhs); //V * M
-
 	Vector2& operator[](const int rhs); // subscript operator returning with reference
 
 	void setRotate(const float a); // set rotate
-
+	void setScale(float x, float y);
 	operator float*();
 
 

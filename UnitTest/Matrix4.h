@@ -16,6 +16,7 @@ public:
 
 	Vector4& operator[](const int rhs);
 
+	void setScale(float x, float y, float z, float w);
 	void setRotateX(const float a);
 	void setRotateY(const float a);
 	void setRotateZ(const float a);

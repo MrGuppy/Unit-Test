@@ -1,6 +1,6 @@
 #pragma once
 #include "Vector3.h"
-
+#include "Vector2.h"
 class Matrix3
 {
 public:
@@ -10,9 +10,10 @@ public:
 
 	Matrix3 operator*(const Matrix3& rhs);
 	Vector3 operator*(const Vector3& rhs);
-
 	Vector3& operator[](const int rhs);
 
+	void setScale(float x, float y, float z);
+	void setPos(const Vector2& pos);
 	void setRotateX(const float a);
 	void setRotateY(const float a);
 	void setRotateZ(const float a);
