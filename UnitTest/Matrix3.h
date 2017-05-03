@@ -14,6 +14,8 @@ public:
 
 	Vector2 getScale();
 	void setScale(float x, float y, float z);
+
+	Vector2 getPos();
 	void setPos(const Vector2& pos);
 	void setRotateX(const float a);
 	void setRotateY(const float a);

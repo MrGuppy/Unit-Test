@@ -22,6 +22,8 @@ public:
 	void setRotateY(const float a);
 	void setRotateZ(const float a);
 	void setRotateW();
+	void setPos(const Vector3& pos);
+	Vector3 getPos();
 
 	operator float*();
 

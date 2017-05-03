@@ -124,6 +124,14 @@ Vector3& Matrix3::operator[](const int rhs)
 	return *(Vector3*)(m + 3 * rhs);
 }
 
+Vector2 Matrix3::getPos()
+{
+	Vector2 result;
+	result.x = m[6];
+	result.y = m[7];
+	return result;
+}
+
 void Matrix3::setPos(const Vector2& pos) //GETTING VECTOR2 INFORMATION	
 {
 	m[0] = 1;

@@ -53,9 +53,9 @@ Vector2 Matrix2::operator*(const Vector2& rhs)
 	return result;
 }
 
-Vector2& Matrix2::operator[](const int rhs)
+Vector2 Matrix2::operator[](const int rhs)
 {
-	return *(Vector2*)(m + 2 * rhs);
+	return *(Vector2*)(m + 2 * rhs); 
 }
 
 void Matrix2::setScale(float x, float y)
@@ -64,4 +64,17 @@ void Matrix2::setScale(float x, float y)
 	m[1] = 0;
 	m[2] = 0;
 	m[3] = y;
+}
+
+Vector2 Matrix2::hermite(Vector2 p1, Vector2 tan1, Vector2 p2, Vector2 tan2, float t)
+{
+	float tSquare = t * t;
+	float tCube = tSquare * t;
+
+	float h00 = 2 * tCube - 3 * tSquare + 1;
+	float h01 = -2 * tCube + 3 * tSquare;
+	float h10 = tCube - 2 * tSquare + t;
+	float h11 = tCube - tSquare;
+
+	return h00 * p1 + h10 * tan1 + h01 * p2 + h11 * tan2;
 }

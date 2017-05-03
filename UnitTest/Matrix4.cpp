@@ -200,3 +200,36 @@ Vector3 Matrix4::getScale()
 	result.z = m[8];
 	return result;
 }
+
+void Matrix4::setPos(const Vector3& pos) //GETTING VECTOR2 INFORMATION	
+{
+	m[0] = 1;
+	m[1] = 0;
+	m[2] = 0;
+	m[3] = 0;
+
+	m[4] = 0;
+	m[5] = 1;
+	m[6] = 0;
+	m[7] = 0;
+
+	m[7] = 0;
+	m[8] = 0;
+	m[9] = 0;
+	m[10] = 1;
+
+	m[11] = pos.x;
+	m[12] = pos.y;
+	m[13] = pos.z;
+	m[14] = 1;
+
+}
+
+Vector3 Matrix4::getPos()
+{
+	Vector3 result;
+	result.x = m[11];
+	result.y = m[12];
+	result.z = m[13];
+	return result;
+}
