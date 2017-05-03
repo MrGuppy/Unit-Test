@@ -248,7 +248,7 @@ float Vector3::distance(const Vector3& p1, const Vector3& p2) //check
 	return sqrtf((diffx * diffx) + (diffy * diffy) + (diffz * diffz));
 }
 
-float Vector3::magnitudeSqrt()
+float Vector3::magnitudeSqrt() //ask richard sqrtf
 {
 	float result;
 	result = (x * x + y * y + z * z);

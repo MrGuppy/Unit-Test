@@ -8,7 +8,6 @@ Matrix2::Matrix2(float a, float b, float c, float d)
 	m[1] = b;
 	m[2] = c;
 	m[3] = d;
-
 }
 
 Matrix2::Matrix2()
@@ -66,4 +65,3 @@ void Matrix2::setScale(float x, float y)
 	m[2] = 0;
 	m[3] = y;
 }
-

@@ -12,6 +12,7 @@ public:
 	Vector3 operator*(const Vector3& rhs);
 	Vector3& operator[](const int rhs);
 
+	Vector2 getScale();
 	void setScale(float x, float y, float z);
 	void setPos(const Vector2& pos);
 	void setRotateX(const float a);

@@ -231,3 +231,54 @@ Vector4 Vector4::clamp(Vector4 min, Vector4 max)
 
 	return result;
 }
+
+Vector4 Vector4::lerp(Vector4& a, Vector4& b, float& t)
+{
+	return (a + b) * t;
+}
+
+bool Vector4::operator!=(const Vector4& rhs)
+{
+	return (x != rhs.x && y != rhs.y && z != rhs.z && w != rhs.w);
+}
+
+bool Vector4::operator<(const Vector4& rhs)
+{
+	return (x < rhs.x && y < rhs.y && z < rhs.z && w < rhs.w);
+}
+
+bool Vector4::operator>(const Vector4& rhs)
+{
+	return (x > rhs.x && y > rhs.y && z > rhs.z && w > rhs.w);
+}
+
+bool Vector4::operator>=(const Vector4& rhs)
+{
+	return (x >= rhs.x && y >= rhs.y && z >= rhs.z && w >= rhs.w);
+}
+
+bool Vector4::operator<=(const Vector4& rhs)
+{
+	return (x <= rhs.x && y <= rhs.y && z <= rhs.z && w <= rhs.w);
+}
+
+bool Vector4::operator==(const Vector4& rhs)
+{
+	return (x == rhs.x && y == rhs.y && z == rhs.z && w == rhs.w);
+}
+
+float Vector4::distance(const Vector4& p1, const Vector4& p2) //check 
+{
+	float diffx = p1.x - p2.x;
+	float diffy = p1.y - p2.y;
+	float diffz = p1.z - p2.z;
+	float diffw = p1.w - p2.w;
+	return sqrtf((diffx * diffx) + (diffy * diffy) + (diffz * diffz) + (diffw * diffw);
+}
+
+float Vector4::magnitudeSqrt() //ask richard sqrtf
+{
+	float result;
+	result = (x * x + y * y + z * z + w * w);
+	return result;
+}

@@ -191,3 +191,12 @@ void Matrix4::setScale(float x, float y, float z, float w)
 	m[14] = 0;
 	m[15] = 1;
 }
+
+Vector3 Matrix4::getScale()
+{
+	Vector3 result; 
+	result.x = m[0];
+	result.y = m[4];
+	result.z = m[8];
+	return result;
+}

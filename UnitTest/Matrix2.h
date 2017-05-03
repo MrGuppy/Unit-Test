@@ -13,6 +13,9 @@ public:
 
 	void setRotate(const float a); // set rotate
 	void setScale(float x, float y);
+
+
+
 	operator float*();
 
 

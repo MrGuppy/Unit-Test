@@ -79,6 +79,14 @@ void Matrix3::setRotateZ(const float a)
 	m[8] = 1;
 }
 
+Vector2 Matrix3::getScale()
+{
+	Vector2 result;
+	result.x = m[0];
+	result.y = m[4];
+	return result;
+}
+
 Matrix3::operator float*()
 {
 	return &m[0];
@@ -116,7 +124,7 @@ Vector3& Matrix3::operator[](const int rhs)
 	return *(Vector3*)(m + 3 * rhs);
 }
 
-void Matrix3::setPos(const Vector2& pos)
+void Matrix3::setPos(const Vector2& pos) //GETTING VECTOR2 INFORMATION	
 {
 	m[0] = 1;
 	m[1] = 0;
