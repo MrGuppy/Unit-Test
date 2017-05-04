@@ -145,3 +145,40 @@ void Matrix3::setScale(float x, float y, float z)
 	m[7] = 0;
 	m[8] = z;
 }
+
+float Matrix3::det3()
+{
+	
+	float resA = m[0] * (m[4] * m[8] - m[5] * m[7]); 
+	float resB = m[1] * (m[3] * m[8] - m[5] * m[6]);
+	float resC = m[2] * (m[3] * m[7] - m[4] * m[6]);
+
+	return resA - resB + resC;
+}
+
+bool Matrix3::isIdentity()
+{
+	int count = 0;
+	for (int i = 0; i < 9; ++i)
+	{
+		if (m[i] == 1 && i % 5 == 0)
+			++count;
+		else if (m[i] == 0)
+			++count;
+	}
+
+	if (count == 9)
+		return true;
+
+	return false;
+}
+void Matrix3::transpose()
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			a[i][j] = a[j][i];
+		}
+	}
+}

@@ -7,6 +7,7 @@ public:
 	Vector2(float x, float y);
 	~Vector2();
 
+
 	Vector2 operator+(const Vector2& rhs);
 	Vector2 operator*(const float rhs);
 	Vector2 operator-(const Vector2& rhs);
@@ -17,7 +18,8 @@ public:
 	float normalise();
 	float magnitude();
 	operator float*();
-
+	Vector2 hermite(Vector2 p1, Vector2 tan1, Vector2 p2, Vector2 tan2, float t);
+	Vector2 bezier(Vector2 a, Vector2 b, Vector2 c, float t);
 	Vector2 normailsed(Vector2& data);
 	Vector2 min(const Vector2& rhs);
 	Vector2 max(const Vector2& rhs);
@@ -29,9 +31,13 @@ public:
 	bool operator<=(const Vector2& rhs); //smaller than or equal to operator 
 	bool operator==(const Vector2& rhs); //equal to operator
 	bool operator!=(const Vector2& rhs); //copy Vectors - not equal 
-	float distance(const Vector2& p1, const Vector2& p2);					//help!
+	float distance(const Vector2& p1, const Vector2& p2);
 	float magnitudeSqrt();
 	Vector2 lerp(Vector2& a, Vector2& b, float& t);
+
+	Vector2 xx();
+	Vector2 yx();
+	Vector2 yy();
 
 	float x;
 	float y;

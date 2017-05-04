@@ -8,7 +8,6 @@ Matrix2::Matrix2(float a, float b, float c, float d)
 	m[1] = b;
 	m[2] = c;
 	m[3] = d;
-
 }
 
 Matrix2::Matrix2()
@@ -67,3 +66,39 @@ void Matrix2::setScale(float x, float y)
 	m[3] = y;
 }
 
+float Matrix2::det2(float a, float b, float c, float d) 
+{
+	m[0] = a;
+	m[1] = b;
+	m[2] = c;
+	m[3] = d;
+
+	return (a * d - b * c);
+}
+
+bool Matrix2::isIdentity()
+{
+	int count = 0;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (m[i] == 1 && i % 5 == 0)
+			++count;
+		else if (m[i] == 0)
+			++count;
+	}
+
+	if (count == 4)
+		return true;
+
+	return false;
+}
+void Matrix2::transpose()
+{
+	for (int i = 0; i < 2; ++i)
+	{
+		for (int j = 0; j < 2; ++j)
+		{
+			a[i][j] = a[j][i];
+		}
+	}
+}

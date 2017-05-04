@@ -214,4 +214,47 @@ Vector2 Vector2::lerp(Vector2& a, Vector2& b, float& t)
 	return (a + b) * t;
 }
 
+Vector2 Vector2::xx()
+{
+	Vector2 result;
+	result.x = x;
+	result.y = x;
+	return result;
+}
+
+Vector2 Vector2::yx()
+{
+	Vector2 result;
+	result.x = y;
+	result.y = x;
+	return result;
+}
+
+Vector2 Vector2::yy()
+{
+	Vector2 result;
+	result.x = y;
+	result.y = y;
+	return result;
+}
+
+Vector2 Vector2::hermite(Vector2 p1, Vector2 tan1, Vector2 p2, Vector2 tan2, float t)
+{
+	float tSquare = t * t;
+	float tCube = tSquare * t;
+	float h00 = 2 * tCube - 3 * tSquare + 1;
+	float h01 = -2 * tCube + 3 * tSquare;
+	float h10 = tCube - 2 * tSquare + t;
+	float h11 = tCube - tSquare;
+
+	return h00 * p1 + h10 * tan1 + h01 * p2 + h11 * tan2;
+}
+
+Vector2 Vector2::bezier(Vector2 a, Vector2 b, Vector2 c, float t) 
+{
+	Vector2 mid1 = lerp(a, b, t);
+	Vector2 mid2 = lerp(b, c, t);
+
+	return lerp(mid1, mid2, t);
+}
 

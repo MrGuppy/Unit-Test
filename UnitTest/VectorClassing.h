@@ -10,27 +10,35 @@ D CastTo(S Source) {};
 template <>
 Vector3  CastTo(Vector2 source)
 {
-	Vector3 result;
-	result.x = source.x;
-	result.y = source.y;
-	return result;
+	return Vector3(source.x, source.y, 0);
+}
+
+template<>
+Vector2 CastTo(Vector3 source)
+{
+	return Vector2(source.x, source.y);
 }
 
 template <>
 Vector4 CastTo(Vector2 source)
 {
-	Vector4 result;
-	result.x = source.x;
-	result.y = source.y;
-	return result;
+	return Vector4(source.x, source.y, 0, 0);
 }
 
-//template<>
-//Vector2 CastTo(Vector3 source)
-//{
-//	Vector2 result;
-//	result.x = source.x;
-//	result.y = source.y;
-//	result.z = source.z;
-//	return result;
-//}
+template <>
+Vector2 CastTo(Vector4 source)
+{
+	return Vector2(source.x, source.y);
+}
+
+template <>
+Vector3 CastTo(Vector4 source)
+{
+	return Vector3(source.x, source.y, source.z);
+}
+
+template <>
+Vector4 CastTo(Vector3 source)
+{
+	return Vector4(source.x, source.y, source.z, 0);
+}

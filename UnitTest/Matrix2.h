@@ -10,11 +10,16 @@ public:
 	Matrix2 operator*(const Matrix2& rhs); //M * M
 	Vector2 operator*(const Vector2& rhs); //V * M
 	Vector2& operator[](const int rhs); // subscript operator returning with reference
-
+	float det2(float a, float b, float c, float d);
+	bool isIdentity();
+	void transpose();
 	void setRotate(const float a); // set rotate
 	void setScale(float x, float y);
 	operator float*();
 
-
-	float m[4];
+	union
+	{
+		float m[4];
+		float a[2][2];
+	};
 };

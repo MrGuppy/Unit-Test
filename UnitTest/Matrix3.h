@@ -11,6 +11,9 @@ public:
 	Matrix3 operator*(const Matrix3& rhs);
 	Vector3 operator*(const Vector3& rhs);
 	Vector3& operator[](const int rhs);
+	bool isIdentity();
+	void transpose();
+	float det3();
 
 	void setScale(float x, float y, float z);
 	void setPos(const Vector2& pos);
@@ -23,6 +26,11 @@ public:
 	//float fp v cast operator
 	//float fp m cast operator
 
-	float m[9];
+	union
+	{
+		float m[9];
+		float a[3][3];
+	};
+
 };
 

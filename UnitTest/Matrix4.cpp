@@ -1,5 +1,6 @@
 #include "Matrix4.h"
 #include <math.h>
+#include "VectorClassing.h"
 
 Matrix4::Matrix4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float f_m, float n, float o, float p)
 {
@@ -128,6 +129,25 @@ Matrix4::~Matrix4()
 {
 }
 
+void Matrix4::lookAt(Vector3 from, Vector3 look, Vector3 up)
+{
+	Vector3 zAxis = from - look;
+	zAxis.normalise();
+
+	Vector3 xAxis = zAxis.cross(up);
+	xAxis.normalise();
+
+	Vector3 yAxis = xAxis.cross(zAxis);
+	yAxis.normalise();
+
+	(*this)[0] = CastTo<Vector4>(xAxis);
+	(*this)[1] = CastTo<Vector4>(yAxis);
+	(*this)[2] = CastTo<Vector4>(zAxis);
+	(*this)[3] = CastTo<Vector4>(from);
+
+	m[15] = 1;
+}
+
 Matrix4 Matrix4::operator*(const Matrix4 & rhs)
 {
 	Matrix4 result;
@@ -190,4 +210,41 @@ void Matrix4::setScale(float x, float y, float z, float w)
 	m[13] = 0;
 	m[14] = 0;
 	m[15] = 1;
+}
+
+float Matrix4::det4()
+{	
+	float resA = m[0] * (m[5] * m[10] * m[15] - m[5] * m[11] * m[14] - m[6] * m[9] * m[15] + m[6] * m[11] * m[13] + m[7] * m[9] * m[14] - m[7] * m[10] * m[13]);
+	float resB = m[1] * (m[4] * m[10] * m[15] - m[4] * m[11] * m[14] - m[6] * m[8] * m[15] + m[6] * m[11] * m[12] + m[7] * m[8] * m[14] - m[7] * m[10] * m[12]);
+	float resC = m[2] * (m[4] * m[9] * m[15] - m[4] * m[11] * m[13] - m[5] * m[8] * m[15] + m[5] * m[11] * m[12] + m[7] * m[8] * m[13] - m[7] * m[9] * m[12]);
+	float resD = m[3] * (m[4] * m[9] * m[14] - m[4] * m[10] * m[13] - m[5] * m[8] * m[14] + m[5] * m[10] * m[12] + m[6] * m[8] * m[13] - m[6] * m[9] * m[12]);
+
+	return resA - resB + resC - resD;
+}
+
+bool Matrix4::isIdentity()
+{
+	int count = 0;
+	for (int i = 0; i < 16; ++i)
+	{
+		if (m[i] == 1 && i % 5 == 0)
+			++count;
+		else if (m[i] == 0)
+			++count;
+	}
+
+	if (count == 16)
+		return true;
+
+	return false;
+}
+void Matrix4::transpose()
+{
+	for (int i = 0; i < 2; ++i)
+	{
+		for (int j = 0; j < 2; ++j)
+		{
+			a[i][j] = a[j][i];
+		}
+	}
 }

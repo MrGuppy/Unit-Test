@@ -254,3 +254,241 @@ float Vector3::magnitudeSqrt()
 	result = (x * x + y * y + z * z);
 	return result;
 }
+
+Vector3 Vector3::hermite(Vector3 p1, Vector3 tan1, Vector3 p2, Vector3 tan2, float t)
+{
+	float tSquare = t * t;
+	float tCube = tSquare * t;
+	float h00 = 2 * tCube - 3 * tSquare + 1;
+	float h01 = -2 * tCube + 3 * tSquare;
+	float h10 = tCube - 2 * tSquare + t;
+	float h11 = tCube - tSquare;
+
+	return h00 * p1 + h10 * tan1 + h01 * p2 + h11 * tan2;
+}
+
+Vector3 Vector3::bezier(Vector3 a, Vector3 b, Vector3 c, float t)
+{
+	Vector3 mid1 = lerp(a, b, t);
+	Vector3 mid2 = lerp(b, c, t);
+
+	return lerp(mid1, mid2, t);
+}
+
+Vector3 Vector3::zxx()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = x;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::zxy()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = x;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::zxz()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = x;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::zyx()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = y;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::zyy()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = y;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::zyz()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = y;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::zzx()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = z;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::zzy()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = z;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::zzz()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = z;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::yxx()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = x;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::yxy()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = x;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::yxz()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = x;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::yyx()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = y;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::yyy()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = y;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::yyz()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = y;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::yzx()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = z;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::yzy()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = z;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::yzz()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = z;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::xxx()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = x;
+	result.z = x;
+	return result;
+}
+
+Vector3 Vector3::xxy()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = x;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::xxz()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = x;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::xyx()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = y;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::xyy()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = y;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::xyz()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = y;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::xzx()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = z;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::xzy()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = z;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::xzz()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = z;
+	result.z = z;
+	return result;
+}

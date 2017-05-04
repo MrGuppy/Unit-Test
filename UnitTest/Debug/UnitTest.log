@@ -1,9 +1,9 @@
-﻿  Vector4.cpp
+﻿  main.cpp
+  Vector4.cpp
   Vector3.cpp
   Vector2.cpp
   Matrix4.cpp
   Matrix3.cpp
   Matrix2.cpp
   Generating Code...
-MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\s171736\Documents\GitHub\Unit-Test\Debug\UnitTest.exe : fatal error LNK1120: 1 unresolved externals
+  UnitTest.vcxproj -> C:\Users\s171736\Documents\GitHub\Unit-Test\Debug\UnitTest.exe
