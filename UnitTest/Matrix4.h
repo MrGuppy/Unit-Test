@@ -15,13 +15,24 @@ public:
 	Matrix4 operator*(const Matrix4& rhs);
 	Vector4 operator*(const Vector4& rhs);
 	Vector4& operator[](const int rhs);
+<<<<<<< HEAD
 	float det4();
+=======
+
+	Vector3 getScale();
+>>>>>>> origin/master
 	void setScale(float x, float y, float z, float w);
 	void setRotateX(const float a);
 	void setRotateY(const float a);
 	void setRotateZ(const float a);
 	void setRotateW();
+<<<<<<< HEAD
 	void transpose();
+=======
+	void setPos(const Vector3& pos);
+	Vector3 getPos();
+
+>>>>>>> origin/master
 	operator float*();
 
 	union
